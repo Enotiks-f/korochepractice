@@ -1,17 +1,39 @@
 package org.example;
-
+import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        char[] chars = str.toCharArray();
+        int left = 0;
+        int right = chars.length - 1;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+        while(left < right) {
+
+            boolean flagLeft = false;
+            boolean flagRight = false;
+            if (Character.isLetter(chars[left])) {
+                flagLeft = true;
+            }else {
+                left++;
+            }
+            if (Character.isLetter(chars[right])) {
+                flagRight = true;
+            }else {
+                right--;
+            }
+
+            if (flagLeft && flagRight) {
+                char tmp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = tmp;
+                left++;
+                right--;
+            }
         }
+        System.out.println(new String(chars));
     }
 }
+
