@@ -9,7 +9,6 @@ public class StringReverse {
         int right = chars.length - 1;
 
         while (left < right) {
-
             boolean flagLeft = false;
             boolean flagRight = false;
             if (Character.isLetter(chars[left])) {

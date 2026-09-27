@@ -6,7 +6,7 @@ public class Main {
         StringReverse sr = new StringReverse();
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String result = sr.reverseLatter(str);
+        String result = sr.reverseLatter(null);
         System.out.print(result);
     }
 }
