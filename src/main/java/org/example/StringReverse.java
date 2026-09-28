@@ -1,9 +1,12 @@
 package org.example;
 
-import java.util.Scanner;
-
 public class StringReverse {
-    public String reverseLatter(String s) {
+    public String reverseLetter(String s) {
+
+        if (s == null) {
+            throw new IllegalArgumentException("Строка не может быть: null");
+        }
+
         char[] chars = s.toCharArray();
         int left = 0;
         int right = chars.length - 1;
